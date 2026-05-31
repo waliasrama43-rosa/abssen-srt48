@@ -217,11 +217,14 @@ function readColumn(col) {
   
   var data = sheet.getRange(2, col, lastRow - 1, 1).getValues(); // Mulai row 2 (skip header)
   
-  // Filter kosong
+  // Header yang harus di-skip
+  var headers = ["NAMA TENDIK", "NAMA KEGIATAN", "nama tendik", "nama kegiatan"];
+  
+  // Filter kosong dan header
   var result = [];
   for (var i = 0; i < data.length; i++) {
     var val = String(data[i][0]).trim();
-    if (val !== "" && val !== "undefined" && val !== "null") {
+    if (val !== "" && val !== "undefined" && val !== "null" && headers.indexOf(val.toUpperCase()) === -1) {
       result.push(val);
     }
   }
