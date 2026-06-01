@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="theme-color" content="#0f1419" />
+  <meta name="description" content="EduSmart Asrama - Sistem Manajemen Asrama & Pondok Pesantren" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="EduSmart" />
+  <title>EduSmart Asrama</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- Header -->
+    <header class="app__header hidden" id="app-header">
+      <span class="app__header-title">EduSmart</span>
+    </header>
+
+    <!-- Offline Badge -->
+    <div class="offline-badge" id="offline-badge">Offline</div>
+
+    <!-- Alert Container -->
+    <div id="alert-container" style="position:fixed;top:64px;left:16px;right:16px;z-index:150;max-width:480px;margin:0 auto;"></div>
+
+    <!-- Main Content -->
+    <main class="app__content" id="app-content">
+      <!-- Pages rendered here by router -->
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="app__nav hidden" id="app-nav">
+      <a class="nav-item nav-item--active" href="#dashboard">
+        <span class="nav-item__icon">&#127968;</span>
+        <span>Beranda</span>
+      </a>
+      <a class="nav-item" href="#kegiatan">
+        <span class="nav-item__icon">&#9997;</span>
+        <span>Kegiatan</span>
+      </a>
+      <a class="nav-item" href="#laporan">
+        <span class="nav-item__icon">&#128202;</span>
+        <span>Laporan</span>
+      </a>
+      <a class="nav-item" href="#profil">
+        <span class="nav-item__icon">&#128100;</span>
+        <span>Profil</span>
+      </a>
+    </nav>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-backdrop" id="modal-backdrop">
+      <div class="modal">
+        <div class="modal__title"></div>
+        <div class="modal__body"></div>
+        <div class="modal__actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts (order matters: dependencies first) -->
+  <script src="js/db.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="pages/login.js"></script>
+  <script src="pages/dashboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
